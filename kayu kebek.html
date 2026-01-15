@@ -1,0 +1,477 @@
+<sssss
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#f7f3ef;
+  --text:#4b3f35;
+  --accent:#c7a17a;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Inter',sans-serif;
+  background:var(--bg);
+  color:var(--text);
+  scroll-behavior:smooth;
+}
+
+/* ================= HEADER ================= */
+header{
+  position:fixed;
+  top:0; left:0;
+  width:100%;
+  padding:20px 8%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  backdrop-filter:blur(12px);
+  background:rgba(255,255,255,.6);
+  z-index:100;
+}
+
+header strong{
+  font-family:'Playfair Display',serif;
+  letter-spacing:1px;
+}
+
+nav a{
+  margin-left:28px;
+  text-decoration:none;
+  color:var(--text);
+  font-size:14px;
+  letter-spacing:1px;
+  position:relative;
+}
+
+nav a::after{
+  content:'';
+  position:absolute;
+  left:50%;
+  bottom:-6px;
+  width:0;
+  height:1px;
+  background:var(--accent);
+  transition:.4s;
+}
+
+nav a:hover::after{
+  width:100%;
+  left:0;
+}
+
+/* ================= HERO ================= */
+.hero{
+  height:100vh;
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  background:
+    linear-gradient(rgba(247,243,239,.85),rgba(247,243,239,.85)),
+    url("file:///C:/Users/PC%201/Downloads/gambar%20background.jpg");
+  background-size:cover;
+  background-position:center;
+}
+
+.hero-left{
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+
+.hero-left img{
+  width:260px;
+  border-radius:26px;
+  box-shadow:0 30px 60px rgba(75,63,53,.15);
+}
+
+.hero-right{
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+}
+
+.hero-right h1{
+  font-family:'Playfair Display',serif;
+  font-size:86px;
+  line-height:1.1;
+  opacity:0;
+  transform:translateY(40px);
+  animation:fadeUp 1.6s forwards;
+}
+
+.hero-right span{
+  font-size:22px;
+  letter-spacing:4px;
+}
+
+.hero-right i{
+  margin-top:20px;
+  opacity:.7;
+}
+
+@keyframes fadeUp{
+  to{opacity:1;transform:translateY(0)}
+}
+
+/* ================= SECTION ================= */
+section{
+  padding:80px 8%;
+}
+
+h2{
+  font-family:'Playfair Display',serif;
+  font-size:42px;
+  text-align:center;
+  margin-bottom:16px;
+}
+
+p{
+  max-width:720px;
+  margin:0 auto;
+  text-align:center;
+  line-height:1.8;
+  opacity:.8;
+}
+
+/* ===== GALERI FIX ===== */
+#galeri{
+  margin-top:80px;
+}
+
+.gallery{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(160px,1fr));
+  gap:24px;
+}
+
+.card{
+  position:relative;
+  height:220px;
+  border-radius:18px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+}
+
+.card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s ease;
+}
+
+/* overlay teks */
+.overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:14px;
+  background:linear-gradient(transparent,rgba(0,0,0,.65));
+  color:#fff;
+  transform:translateY(30px);
+  opacity:0;
+  transition:.6s ease;
+}
+
+.overlay h3{
+  margin:0;
+  font-size:16px;
+}
+
+.overlay p{
+  margin-top:6px;
+  font-size:13px;
+  opacity:.9;
+}
+
+/* animasi lembut */
+.card:hover img{
+  transform:scale(1.05);
+}
+
+.card:hover .overlay{
+  transform:translateY(0);
+  opacity:1;
+}
+
+/* ===== MASYARAKAT ===== */
+#masyarakat{
+  margin:120px auto;
+  text-align:center;
+}
+
+#masyarakat .sub{
+  margin-bottom:40px;
+  opacity:.75;
+}
+
+.masyarakat-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:32px;
+  max-width:720px;
+  margin:0 auto;
+}
+
+.masyarakat-card{
+  position:relative;
+  height:220px;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 12px 30px rgba(0,0,0,.12);
+  transition:.6s;
+}
+
+.masyarakat-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s ease;
+}
+
+/* overlay mirip galeri */
+.masyarakat-card .overlay{
+  position:absolute;
+  bottom:0;
+  width:100%;
+  padding:18px;
+  background:linear-gradient(transparent,rgba(0,0,0,.65));
+  color:#fff;
+  text-align:left;
+  transform:translateY(14px);
+  transition:.6s ease;
+}
+
+.masyarakat-card h3{
+  margin:0 0 6px;
+  font-size:18px;
+}
+
+.masyarakat-card p{
+  font-size:13px;
+  line-height:1.5;
+  opacity:.9;
+}
+
+/* animasi */
+.masyarakat-card:hover img{
+  transform:scale(1.05);
+}
+
+.masyarakat-card:hover .overlay{
+  transform:translateY(0);
+}
+
+/* ================= MASYARAKAT ================= */
+.society{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:60px;
+  align-items:center;
+}
+
+.society img{
+  width:100%;
+  border-radius:32px;
+}
+
+/* ================= TEAM ================= */
+.team-grid{
+  margin-top:80px;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.team-card{
+  text-align:center;
+  padding:32px;
+  border-radius:28px;
+  background:rgba(255,255,255,.6);
+  transition:.6s;
+}
+
+.team-card:hover{
+  transform:translateY(-8px);
+  box-shadow:0 30px 60px rgba(75,63,53,.1);
+}
+
+.team-card img{
+  width:120px;
+  height:120px;
+  border-radius:50%;
+  object-fit:cover;
+  margin-bottom:16px;
+}
+
+/* ================= FOOTER ================= */
+footer{
+  padding:80px 8%;
+  text-align:center;
+  font-size:14px;
+  opacity:.7;
+}
+
+/* ================= RESPONSIVE ================= */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr}
+  .hero-left{display:none}
+  .hero-right h1{font-size:64px}
+  .society{grid-template-columns:1fr}
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <strong>Kayu Kebek</strong>
+  <nav>
+    <a href="#hero">Beranda</a>
+    <a href="#sejarah">Sejarah</a>
+    <a href="#galeri">Galeri</a>
+	<a href="#masyarakat">Masyarakat</a>
+    <a href="#team">Our Team</a>
+  </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="hero">
+  <div class="hero-left">
+    <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhkLN7UsbUncbdFS7aKXCWsYt3vn7zXGgEqocX2wQdhP0MIvGFg5IjiNUbYJ4GRCgFQM8LLPYccmi7PnkD2j8TN2jwlKWwczkpvpMAQqgVuc8jxISVz1RUckMZ1yir-T7U6mXlIqwKvC-8oQT6rB5LoaOIGJDzUiKAHQu0X85bcDzK_gxpc8DH4ct0VYu8/s4032/gapura-desa.jpeg" alt="Gapura Desa Kayu Kebek">
+  </div>
+  <div class="hero-right">
+    <h1><span>DESA</span><br>KAYU KEBEK</h1>
+    <i>“Mari singgah sejenak, biarkan hati bernapas.”</i>
+  </div>
+</section>
+
+
+<!-- SEJARAH -->
+<section id="sejarah">
+  <h2>Sejarah Desa Kayu Kebek</h2>
+  <p>
+    Desa Kayu Kebek lahir dari pertemuan alam yang subur dan manusia yang sederhana.
+    Di kaki perbukitan yang hijau, desa ini tumbuh perlahan, mengikuti irama alam
+    yang tidak pernah tergesa. Tanahnya yang sejuk, airnya yang mengalir tenang,
+    serta udara yang bersih menjadi saksi perjalanan panjang masyarakatnya.
+    <br><br>
+    Sejak dahulu, Kayu Kebek dikenal sebagai tempat tinggal berbagai latar belakang
+    budaya dan kepercayaan. Masyarakat Islam dan Hindu hidup berdampingan,
+    saling menghormati, menjaga tradisi, dan merawat harmoni dalam keseharian.
+    Perbedaan bukan menjadi jarak, melainkan jembatan untuk saling memahami.
+    <br><br>
+    Dari generasi ke generasi, nilai gotong royong terus dijaga.
+    Sawah, kebun apel, dan jalur menuju perbukitan menjadi ruang bersama
+    tempat cerita-cerita kecil lahir—tentang kerja keras, kebersamaan,
+    dan rasa syukur atas apa yang diberikan alam.
+    <br><br>
+    Kini, Desa Kayu Kebek melangkah ke masa depan sebagai desa wisata,
+    tanpa meninggalkan akar dan jati dirinya.
+    Sebuah desa yang tidak hanya menawarkan keindahan alam,
+    tetapi juga ketenangan, kehangatan, dan rasa pulang bagi siapa pun
+    yang singgah sejenak.
+  </p>
+</section>
+
+
+<section id="galeri">
+  <h2>Galeri Desa</h2>
+
+  <div class="gallery">
+
+    <div class="card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgAl60NXGD4KrwWDSC4-Baho0_r3Ma4ZQNxEijnV4gUp6ZIfLGeiSsiLy0PyP-okDvnUNuE8NPs32Zseforj7nNPldrZUp27f67W1W6juyBVyxHl4Sxbn6sFnfAihns6sM4v5JjBLBcNcTnamnr_gcqrFO1bvUD3Bp33QGywy9hOy60OcjuTMxp4k7htPQ/s1536/air-terjun.jpg" alt="Coban Waru">
+      <div class="overlay">
+        <h3>Coban Waru</h3>
+        <p>Air jatuh yang mengajarkan ikhlas.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh9c14aLv70hyphenhyphenPo3MVX90PTLKVMUbgu_wwE71mWCeeoX67g_PmXuyQdhx2HuK7W2-aAPJIv5L6HlSAb4YgsbJeqhKlqcOVn1HAkL5ttPzfQXu3R68cqiqeM5L5C9g7glbIzqxPYZRqR6NbTs31guhDmhmarla3uP1A_v0Ci2olA2NMPa0mBVrOojcq5LFQ/s1250/bukit-pijen.jpeg" alt="Bukit Pijen">
+      <div class="overlay">
+        <h3>Bukit Pijen</h3>
+        <p>Tenang yang tak perlu suara.</p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjdo8Ep1kZXBF4f9Iv_DhOpc18zRhQOQczzQWs9xgIZS76_7G9aEOvsaAititppPhXq1r3Za2h6Q8ZHlVZb5JdJdZlxTqT4wYwmpXyN_nGbEr68iw73MEPpHC0TZ8c0-HqmCg4OaP_oiVMtnAauaTNLfaTSykI6EfLpNtd_-3NIJDGmXqIJfP-w7n8Bumw/s4032/kebun-apel.png" alt="Petik Apel">
+      <div class="overlay">
+        <h3>Petik Apel</h3>
+        <p>Manisnya alam, hasil sabar.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+<section id="masyarakat">
+  <h2>Kehidupan Masyarakat</h2>
+
+  <div class="gallery">
+
+    <div class="card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhYM_uZH17iXTsOM4v1LBSRt63di4OyE_18hyNzwpwAVNu5YV4_-bE0Yr5N5bp6zcZ4tbVHmGXHJZVM5lO9tnOG5IZD4u_8ojjr58ix3iT0tBA-vNnWXCPAeXeNO2QuhoZZfaRHpMsHt2mlzpO5K3ugiLMMF8_N_saRvID0qxIn9nGCURN17dW7zK7eWas/s1273/masjid.jpeg">
+      <div class="overlay">
+        <h3>Islam</h3>
+        <p>
+          Di antara adzan dan doa, tumbuh kebiasaan saling menjaga,
+          hidup sederhana, dan gotong royong tanpa pamrih.
+        </p>
+      </div>
+    </div>
+
+    <div class="card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEgERP3UYbKR0seSk-__PLLb4990NX7AiWuy5Jxi_w-eJyDE0c4Mqmgh7gv8SMcq7cZEsXZStTdM9V2xaVeS2QFhsbI7W8eKArmszb1BaxJvS_UHQYl8v-Xghw9qS8Wla5tod9mfSLscoqxu_-4y9znSC_B5tY_P49NQDnJ0BMpm-n8Elc0rWSqRwCwsh8M/s225/gambar-pura.jpg">
+      <div class="overlay">
+        <h3>Hindu</h3>
+        <p>
+          Di balik dupa dan mantra, adat dan kearifan lokal dijaga,
+          berdampingan dengan damai tanpa batas keyakinan.
+        </p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+
+
+<!-- TEAM -->
+<section id="team">
+  <h2>Our Team</h2>
+  <p><i>Empat langkah kecil untuk satu tujuan besar.</i></p>
+
+  <div class="team-grid">
+    <div class="team-card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjCxDo1mqIkyUfx83QvPyyif-4IEhrvB1jbnL5Kb7gjVzQ0UaekiJEUbtbPQ5L6n1nmTpqSnwOIpqrCEEcXscwzwRM0Pve2eW5Bb28WHRIAQijRjwU-t4acFDdklA7xV9i4jzhp8RxQWdBefckuqB5-l8_OuhJeWoe2eqJUi2ns94ilqScIZ8ecm-Bkhs8/s640/luil.jpg">
+      <h4>Siti Lu’luilmmaknun</h4>
+    </div>
+    <div class="team-card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhPapfLktOK6-30J4lBD7pCJVMoOfV_4OW-HY5lz66M8rpCYyc4SudZ86E9FJ6agUJCczwhKo_oVb8QzelvvtZA1PPrhxv8RLLIiB4_qHqMgHqbXBuStmBSH62ZQkYPgkRe4x5zavHumCQn7gouZAC8LI03JclxTtWzHnyMQjt3Yahikg83kfTV408I5VQ/s1080/tempe.jpeg">
+      <h4>Mohammad Abizar Ramadhan</h4>
+    </div>
+    <div class="team-card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEjriE8YvJe1pQAJwcM1sbPcZNmACg_9fh6w_tkTdmF6v7QzRdwr25XjlfKcxLKer4nn5XoXQnnKMqykt9gU7dIXLmqdpk372ShLpPJ2b1_OcraF0qOhGWIxxGRqO8axY-tURomPpc2Sn1kFPyrE-3u0OOh9hcwQeQ9QMovsGhhyI_MkwmetgHMjm6FBZo8/s640/wahyuuu.jpg">
+      <h4>M. Nur Afif Ali Maghribi</h4>
+    </div>
+    <div class="team-card">
+      <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEijBxeHYDONIS5r42l_6zop0EQQQTRWuA6KxPQoPCelcHOsUlt5nmc3ldR-acEQ2ZbYBqCe67SR9WmxMua7q4uQoAqEh7CjiR3gkfIDvcvNUtLu8nskJbHGfv1p3i-TgWN1VieP54uEg3G_zyn09_YWhvSVCehAhEiVq8oDSyD5xMpJSL3gs7xjP7RMRnA/s177/apip.jpeg">
+      <h4>Wahyu Ramadhani</h4>
+    </div>
+  </div>
+</section>
+
+<footer>
+  “Di Kayu Kebek, waktu tidak berlari, ia berjalan menemani langkahmu.”  
+  <br><br>
+  © 2026 Tim UKK Kelompok
+</footer>
+
+</body>
+</html>
